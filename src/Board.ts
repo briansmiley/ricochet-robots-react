@@ -362,8 +362,13 @@ const joinFaces = (
   southWest: BoardFace,
   southEast: BoardFace
 ): BoardFace => {
-  const topHalf = northWest.map((row, y) => row.concat(northEast[y]));
-  const bottomHalf = southWest.map((row, y) => row.concat(southEast[y]));
+  const rotatedNorthEast = rotateFace(northEast, 1);
+  const rotatedSouthEast = rotateFace(southEast, 2);
+  const rotatedSouthWest = rotateFace(southWest, 3);
+  const topHalf = northWest.map((row, y) => row.concat(rotatedNorthEast[y]));
+  const bottomHalf = rotatedSouthWest.map((row, y) =>
+    row.concat(rotatedSouthEast[y])
+  );
   return topHalf.concat(bottomHalf);
 };
 
@@ -406,14 +411,12 @@ const generateGameBoard = (
   // Select the faces based on the code
   const selectedFaces = order.map((index, i) => quadrants[index][flips[i]]);
 
-  // Rotate the selected faces based on the code
-  const rotatedFaces = selectedFaces.map((face, i) => rotateFace(face, i));
   // Stitch the selected faces together
   const joinedBoard = joinFaces(
-    rotatedFaces[0],
-    rotatedFaces[1],
-    rotatedFaces[2],
-    rotatedFaces[3]
+    selectedFaces[0],
+    selectedFaces[1],
+    selectedFaces[2],
+    selectedFaces[3]
   );
 
   //Complete wall info so each space knows what its bordering walls are
