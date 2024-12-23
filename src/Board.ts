@@ -24,57 +24,57 @@ type BoardQuadrantConfig = [SpaceConfig[], SpaceConfig[]];
 const BOARD_CONFIGS: BoardQuadrantConfig[] = [
   [
     [
-      { x: 0, y: 3, walls: ["e"] },
+      { y: 0, x: 3, walls: ["e"] },
       {
-        x: 1,
-        y: 5,
+        y: 1,
+        x: 5,
         walls: ["e", "s"],
         sprite: { shape: "star", color: "green" }
       },
       {
-        x: 2,
-        y: 1,
+        y: 2,
+        x: 1,
         walls: ["w", "s"],
         sprite: { shape: "square", color: "red" }
       },
-      { x: 3, y: 0, walls: ["s"] },
+      { y: 3, x: 0, walls: ["s"] },
       {
-        x: 4,
-        y: 6,
+        y: 4,
+        x: 6,
         walls: ["n", "w"],
         sprite: { shape: "circle", color: "yellow" }
       },
       {
-        x: 6,
-        y: 2,
+        y: 6,
+        x: 2,
         walls: ["n", "e"],
         sprite: { shape: "triangle", color: "blue" }
       }
     ],
     [
-      { x: 0, y: 4, walls: ["e"] },
+      { x: 4, y: 0, walls: ["e"] },
       {
-        x: 1,
-        y: 2,
+        x: 2,
+        y: 1,
         walls: ["w", "n"],
         sprite: { shape: "circle", color: "yellow" }
       },
       {
-        x: 3,
-        y: 6,
+        x: 6,
+        y: 3,
         walls: ["w", "s"],
         sprite: { shape: "triangle", color: "blue" }
       },
-      { x: 4, y: 0, walls: ["s"] },
+      { x: 0, y: 4, walls: ["s"] },
       {
-        x: 5,
-        y: 4,
+        x: 4,
+        y: 5,
         walls: ["n", "e"],
         sprite: { shape: "square", color: "red" }
       },
       {
-        x: 6,
-        y: 1,
+        x: 1,
+        y: 6,
         walls: ["n", "e"],
         sprite: { shape: "star", color: "green" }
       }
@@ -82,188 +82,188 @@ const BOARD_CONFIGS: BoardQuadrantConfig[] = [
   ],
   [
     [
-      { x: 0, y: 3, walls: ["e"] },
+      { x: 3, y: 0, walls: ["e"] },
       {
-        x: 2,
-        y: 5,
+        x: 5,
+        y: 2,
         walls: ["e", "s"],
         sprite: { shape: "star", color: "blue" }
       },
-      { x: 4, y: 0, walls: ["s"] },
-      {
-        x: 4,
-        y: 2,
-        walls: ["e", "n"],
-        sprite: { shape: "circle", color: "green" }
-      },
-      {
-        x: 5,
-        y: 7,
-        walls: ["w", "s"],
-        sprite: { shape: "triangle", color: "red" }
-      },
-      {
-        x: 6,
-        y: 1,
-        walls: ["n", "w"],
-        sprite: { shape: "square", color: "yellow" }
-      }
-    ],
-    [
-      { x: 0, y: 3, walls: ["e"] },
-      {
-        x: 1,
-        y: 1,
-        walls: ["w", "s"],
-        sprite: { shape: "triangle", color: "red" }
-      },
+      { x: 0, y: 4, walls: ["s"] },
       {
         x: 2,
-        y: 6,
-        walls: ["e", "n"],
-        sprite: { shape: "circle", color: "green" }
-      },
-      {
-        x: 4,
-        y: 2,
-        walls: ["s", "e"],
-        sprite: { shape: "star", color: "blue" }
-      },
-      { x: 5, y: 0, walls: ["s"] },
-      {
-        x: 5,
-        y: 7,
-        walls: ["n", "w"],
-        sprite: { shape: "square", color: "yellow" }
-      }
-    ]
-  ],
-  [
-    [
-      { x: 0, y: 4, walls: ["e"] },
-      {
-        x: 1,
-        y: 6,
-        walls: ["e", "s"],
-        sprite: { shape: "star", color: "yellow" }
-      },
-      {
-        x: 2,
-        y: 1,
-        walls: ["w", "n"],
-        sprite: { shape: "triangle", color: "green" }
-      },
-      { x: 5, y: 0, walls: ["s"] },
-      {
-        x: 5,
-        y: 6,
-        walls: ["n", "e"],
-        sprite: { shape: "square", color: "blue" }
-      },
-      {
-        x: 6,
-        y: 3,
-        walls: ["w", "s"],
-        sprite: { shape: "circle", color: "red" }
-      }
-    ],
-    [
-      { x: 0, y: 1, walls: ["e"] },
-      {
-        x: 1,
         y: 4,
-        walls: ["w", "n"],
-        sprite: { shape: "circle", color: "red" }
-      },
-      {
-        x: 2,
-        y: 1,
-        walls: ["n", "e"],
-        sprite: { shape: "triangle", color: "green" }
-      },
-      {
-        x: 3,
-        y: 6,
-        walls: ["s", "e"],
-        sprite: { shape: "star", color: "yellow" }
-      },
-      { x: 5, y: 0, walls: ["s"] },
-      {
-        x: 6,
-        y: 3,
-        walls: ["w", "s"],
-        sprite: { shape: "square", color: "blue" }
-      }
-    ]
-  ],
-  [
-    [
-      { x: 0, y: 5, walls: ["e"] },
-      {
-        x: 1,
-        y: 2,
-        walls: ["e", "s"],
-        sprite: { shape: "star", color: "red" }
-      },
-      {
-        x: 3,
-        y: 1,
-        walls: ["s", "w"],
-        sprite: { shape: "square", color: "green" }
-      },
-      { x: 4, y: 0, walls: ["s"] },
-      {
-        x: 4,
-        y: 6,
-        walls: ["w", "n"],
-        sprite: { shape: "triangle", color: "yellow" }
-      },
-      {
-        x: 6,
-        y: 5,
-        walls: ["n", "e"],
-        sprite: { shape: "circle", color: "blue" }
+        walls: ["e", "n"],
+        sprite: { shape: "circle", color: "green" }
       },
       {
         x: 7,
+        y: 5,
+        walls: ["w", "s"],
+        sprite: { shape: "triangle", color: "red" }
+      },
+      {
+        x: 1,
+        y: 6,
+        walls: ["n", "w"],
+        sprite: { shape: "square", color: "yellow" }
+      }
+    ],
+    [
+      { x: 3, y: 0, walls: ["e"] },
+      {
+        x: 1,
+        y: 1,
+        walls: ["w", "s"],
+        sprite: { shape: "triangle", color: "red" }
+      },
+      {
+        x: 6,
+        y: 2,
+        walls: ["e", "n"],
+        sprite: { shape: "circle", color: "green" }
+      },
+      {
+        x: 2,
+        y: 4,
+        walls: ["s", "e"],
+        sprite: { shape: "star", color: "blue" }
+      },
+      { x: 0, y: 5, walls: ["s"] },
+      {
+        x: 7,
+        y: 5,
+        walls: ["n", "w"],
+        sprite: { shape: "square", color: "yellow" }
+      }
+    ]
+  ],
+  [
+    [
+      { x: 4, y: 0, walls: ["e"] },
+      {
+        x: 6,
+        y: 1,
+        walls: ["e", "s"],
+        sprite: { shape: "star", color: "yellow" }
+      },
+      {
+        x: 1,
+        y: 2,
+        walls: ["w", "n"],
+        sprite: { shape: "triangle", color: "green" }
+      },
+      { x: 0, y: 5, walls: ["s"] },
+      {
+        x: 6,
+        y: 5,
+        walls: ["n", "e"],
+        sprite: { shape: "square", color: "blue" }
+      },
+      {
+        x: 3,
+        y: 6,
+        walls: ["w", "s"],
+        sprite: { shape: "circle", color: "red" }
+      }
+    ],
+    [
+      { x: 1, y: 0, walls: ["e"] },
+      {
+        x: 4,
+        y: 1,
+        walls: ["w", "n"],
+        sprite: { shape: "circle", color: "red" }
+      },
+      {
+        x: 1,
+        y: 2,
+        walls: ["n", "e"],
+        sprite: { shape: "triangle", color: "green" }
+      },
+      {
+        x: 6,
         y: 3,
+        walls: ["s", "e"],
+        sprite: { shape: "star", color: "yellow" }
+      },
+      { x: 0, y: 5, walls: ["s"] },
+      {
+        x: 3,
+        y: 6,
+        walls: ["w", "s"],
+        sprite: { shape: "square", color: "blue" }
+      }
+    ]
+  ],
+  [
+    [
+      { x: 5, y: 0, walls: ["e"] },
+      {
+        x: 2,
+        y: 1,
+        walls: ["e", "s"],
+        sprite: { shape: "star", color: "red" }
+      },
+      {
+        x: 1,
+        y: 3,
+        walls: ["s", "w"],
+        sprite: { shape: "square", color: "green" }
+      },
+      { x: 0, y: 4, walls: ["s"] },
+      {
+        x: 6,
+        y: 4,
+        walls: ["w", "n"],
+        sprite: { shape: "triangle", color: "yellow" }
+      },
+      {
+        x: 5,
+        y: 6,
+        walls: ["n", "e"],
+        sprite: { shape: "circle", color: "blue" }
+      },
+      {
+        x: 3,
+        y: 7,
         walls: ["s", "e"],
         sprite: { shape: "burst", color: "white" }
       }
     ],
     [
-      { x: 0, y: 3, walls: ["e"] },
+      { x: 3, y: 0, walls: ["e"] },
       {
-        x: 1,
-        y: 6,
+        x: 6,
+        y: 1,
         walls: ["w", "s"],
         sprite: { shape: "circle", color: "blue" }
       },
       {
-        x: 3,
-        y: 1,
+        x: 1,
+        y: 3,
         walls: ["e", "n"],
         sprite: { shape: "triangle", color: "yellow" }
       },
       {
-        x: 4,
-        y: 5,
+        x: 5,
+        y: 4,
         walls: ["w", "n"],
         sprite: { shape: "square", color: "green" }
       },
       {
-        x: 5,
-        y: 2,
+        x: 2,
+        y: 5,
         walls: ["s", "e"],
         sprite: { shape: "star", color: "red" }
       },
       {
-        x: 5,
-        y: 7,
+        x: 7,
+        y: 5,
         walls: ["s", "e"],
         sprite: { shape: "burst", color: "white" }
       },
-      { x: 6, y: 0, walls: ["s"] }
+      { x: 0, y: 6, walls: ["s"] }
     ]
   ]
 ] as const;
@@ -425,10 +425,66 @@ const generateGameBoard = (
   return completedBoard;
 };
 
-const gameBoard = () => {
-  const code = generateBoardCode();
+/**
+ * Creates an ASCII representation of the board for debugging
+ * @param board The board to visualize
+ * @returns A string containing an ASCII representation of the board
+ */
+const visualizeBoard = (board: BoardFace): string => {
+  let output = '';
+  
+  // For each row
+  for (let y = 0; y < board.length; y++) {
+    // Top walls row
+    let topLine = '';
+    let midLine = '';
+    
+    for (let x = 0; x < board[y].length; x++) {
+      const space = board[y][x];
+      // Top wall
+      topLine += '+' + (space.walls.has('n') ? '---' : '   ');
+      // Left wall and sprite
+      const sprite = space.sprite ? space.sprite.shape[0].toUpperCase() : ' ';
+      midLine += (space.walls.has('w') ? '|' : ' ') + ` ${sprite} `;
+    }
+    // Add final right border
+    topLine += '+';
+    midLine += '|';
+    
+    output += topLine + '\n' + midLine + '\n';
+    
+    // Add bottom border for last row
+    if (y === board.length - 1) {
+      output += '+---'.repeat(board[y].length) + '+\n';
+    }
+  }
+  
+  return output;
+};
+
+// const logBoard = (boardCode?: string) => {
+//   const code = boardCode ? boardCode : generateBoardCode();
+//   const board = generateGameBoard(BOARD_CONFIGS, code);
+//     // Simple array representation with full depth
+//     console.dir(board.map(row => 
+//       row.map(space => ({
+//         walls: Array.from(space.walls),
+//         sprite: space.sprite
+//       }))
+//     ), { depth: null });
+//   }
+
+const gameBoard = (boardCode?: string) => {
+  const code = boardCode ? boardCode : generateBoardCode();
   const board = generateGameBoard(BOARD_CONFIGS, code);
+  
+  // Visual ASCII representation
+  console.log(visualizeBoard(board));
+  
+
+  
   return { board, code };
 };
 
 export default gameBoard;
+gameBoard("01230000");
