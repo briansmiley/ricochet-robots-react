@@ -479,7 +479,7 @@ const gameBoard = (boardCode?: string) => {
   const board = generateGameBoard(BOARD_CONFIGS, code);
   
   // Visual ASCII representation
-  console.log(visualizeBoard(board));
+  // console.log(visualizeBoard(board));
   
 
   
@@ -488,4 +488,5 @@ const gameBoard = (boardCode?: string) => {
 
 // Public API
 export type { Space, BoardFace, Sprite };
+export { visualizeBoard };
 export default gameBoard;

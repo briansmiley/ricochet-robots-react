@@ -1,10 +1,13 @@
+import { newBoard } from "./Game";
+import Roboard from "./Roboard";
+
 function App() {
+  const boardState = newBoard();
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <Roboard boardState={boardState} />
     </div>
   );
 }
 
 export default App;
-``;
