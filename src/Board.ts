@@ -487,4 +487,3 @@ const gameBoard = (boardCode?: string) => {
 };
 
 export default gameBoard;
-gameBoard("01230000");
