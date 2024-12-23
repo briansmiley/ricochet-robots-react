@@ -1,15 +1,15 @@
 //WALL CODE
 type Wall = "n" | "s" | "e" | "w";
-type Sprite = {
+ type Sprite = {
   shape: "star" | "square" | "circle" | "triangle" | "burst";
   color: string;
 };
 /**Wall and sprite information for a board space */
-type Space = {
+ type Space = {
   walls: Set<Wall>;
   sprite?: Sprite;
 };
-type BoardFace = Space[][];
+ type BoardFace = Space[][];
 /**Two 2D Arrays of spaces representing the two faces of a board quadrant */
 type BoardQuadrant = [BoardFace, BoardFace];
 /**Wall and sprite information for configuring a board space */
@@ -486,4 +486,6 @@ const gameBoard = (boardCode?: string) => {
   return { board, code };
 };
 
+// Public API
+export type { Space, BoardFace, Sprite };
 export default gameBoard;
