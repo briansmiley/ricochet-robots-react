@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Board cell styles */
+.cell {
+  border: 1px solid #e5e5e5;
+  position: relative;
+}
+
+.wall-north::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #333;
+  z-index: 1;
+}
+
+.wall-south::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #333;
+  z-index: 1;
+}
+
+.wall-west::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #333;
+  z-index: 1;
+}
+
+.wall-east::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #333;
+  z-index: 1;
+}

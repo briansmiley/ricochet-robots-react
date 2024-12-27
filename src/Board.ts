@@ -487,6 +487,6 @@ const gameBoard = (boardCode?: string) => {
 };
 
 // Public API
-export type { Space, BoardFace, Sprite };
+export type { Space, BoardFace, Sprite, Wall };
 export { visualizeBoard };
 export default gameBoard;
