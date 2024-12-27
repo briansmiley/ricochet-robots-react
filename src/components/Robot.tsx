@@ -15,7 +15,7 @@ export const Robot = ({ color }: RobotProps) => {
     return (
         <div className={`size-[80%] rounded-full flex justify-center items-center ${ROBOT_COLOR_CLASSES[color]}`}
         >
-            <BotIcon className="size-[50%]" />
+            <BotIcon className="size-[80%] -translate-y-[5%]" />
         </div>
     );
 }; 
