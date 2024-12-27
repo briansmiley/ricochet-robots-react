@@ -6,7 +6,7 @@ type Wall = "n" | "s" | "e" | "w";
 };
 /**Wall and sprite information for a board space */
  type Space = {
-  walls: Set<Wall>;
+  walls: Wall[];
   sprite?: Sprite;
 };
  type BoardFace = Space[][];
@@ -274,14 +274,14 @@ const generateFace = (config: SpaceConfig[]): BoardFace => {
     Array.from({ length: 8 }, (_, x) => {
       //Get any walls specified for this cell in the config
       const configSpace = config.find(s => s.x === x && s.y === y);
-      const walls = new Set(configSpace?.walls || []);
+      const walls = configSpace?.walls || [];
 
       // Add border walls
-      if (y === 0) walls.add("n");
-      if (x === 0) walls.add("w");
+      if (y === 0) walls.push("n");
+      if (x === 0) walls.push("w");
       if (x === 7 && y === 7) {
-        walls.add("n");
-        walls.add("w");
+        walls.push("n");
+        walls.push("w");
       }
 
       return {
@@ -335,19 +335,19 @@ const rotateFace = (face: BoardFace, n: number) => {
         rotFace[row][col] = buffFace[numRows - col - 1][row];
         const space = rotFace[row][col];
         const temp = [
-          space.walls.has("n"),
-          space.walls.has("e"),
-          space.walls.has("s"),
-          space.walls.has("w")
+          space.walls.includes("n"),
+          space.walls.includes("e"),
+          space.walls.includes("s"),
+          space.walls.includes("w")
         ];
-        space.walls = new Set<Wall>(
+        space.walls =
           [
             temp[3] ? "n" : null,
             temp[0] ? "e" : null,
             temp[1] ? "s" : null,
             temp[2] ? "w" : null
           ].filter(wall => wall !== null) as Wall[]
-        );
+        ;
       }
     }
     buffFace = rotFace.map(row => row.slice());
@@ -376,12 +376,12 @@ const joinFaces = (
 const fillWallParity = (face: BoardFace): BoardFace => {
   face.forEach((row, r) => {
     row.forEach((space, c) => {
-      if (r > 0 && face[r - 1][c].walls.has("s")) space.walls.add("n");
-      if (r < face.length - 1 && face[r + 1][c].walls.has("n"))
-        space.walls.add("s");
-      if (c > 0 && face[r][c - 1].walls.has("e")) space.walls.add("w");
-      if (c < row.length - 1 && face[r][c + 1].walls.has("w"))
-        space.walls.add("e");
+      if (r > 0 && face[r - 1][c].walls.includes("s")) space.walls.push("n");
+      if (r < face.length - 1 && face[r + 1][c].walls.includes("n"))
+        space.walls.push("s");
+      if (c > 0 && face[r][c - 1].walls.includes("e")) space.walls.push("w");
+      if (c < row.length - 1 && face[r][c + 1].walls.includes("w"))
+        space.walls.push("e");
     });
   });
   return face;
@@ -442,10 +442,10 @@ const visualizeBoard = (board: BoardFace): string => {
     for (let x = 0; x < board[y].length; x++) {
       const space = board[y][x];
       // Top wall
-      topLine += '+' + (space.walls.has('n') ? '---' : '   ');
+      topLine += '+' + (space.walls.includes('n') ? '---' : '   ');
       // Left wall and sprite
       const sprite = space.sprite ? space.sprite.shape[0].toUpperCase() : ' ';
-      midLine += (space.walls.has('w') ? '|' : ' ') + ` ${sprite} `;
+      midLine += (space.walls.includes('w') ? '|' : ' ') + ` ${sprite} `;
     }
     // Add final right border
     topLine += '+';
