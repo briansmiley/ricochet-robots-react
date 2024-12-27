@@ -13,23 +13,23 @@ export const RicochetRobots = () => {
 
   const handleMoveRobot = (direction: Direction) => {
     if (!selectedRobot || !gameState.inputAllowed) return;
+    const startingSquare = gameState.board.robotPositions[selectedRobot];
+    const destination = gameUtils.stoppingSquare(startingSquare, direction, gameState.board);
+    if (startingSquare.x === destination.x && startingSquare.y === destination.y) return;
     setInMotion(true);
     setGameState(state => {
       const disabledState = gameUtils.disableInput(state);
       const movedState = gameActions.moveRobotInDirection(disabledState, selectedRobot, direction);
       
-      // Schedule re-enabling input after animation
-      setTimeout(() => {
-        setGameState(state => {
-          const enabledState = gameUtils.enableInput(state);
-          clickSound.play();
-          return enabledState;
-        });
-        setInMotion(false);
-      }, 500);
       
       return movedState;
     });
+    // Schedule re-enabling input after animation
+    setTimeout(() => {
+      setGameState(state =>  gameUtils.enableInput(state) );
+      clickSound.play();
+      setInMotion(false);
+    }, 500);
   }
 
   useEffect(() => {
